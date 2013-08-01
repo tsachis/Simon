@@ -1,0 +1,13 @@
+li {
+    width: 20px;
+    padding: 5px;
+    list-style: none;
+    border:  1px solid #808080;
+    border-radius: 4px;
+}
+
+li.pushed {
+    background-color: #20306b;
+}
+
+
