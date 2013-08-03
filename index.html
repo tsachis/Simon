@@ -34,25 +34,18 @@
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-  <header>
-
-  </header>
-  <div role="main">
-      <ul>
-        <li class="btn1">1</li>
-        <li class="btn2">2</li>
-        <li class="btn3">3</li>
-        <li class="btn4">4</li>
-        <li class="btn5">5</li>
-        <li class="btn6">6</li>
-      </ul>
+  <div role="main" class="main">
+      <div class="start">
+        <div id="btnStart">Start</div>
+      </div>
+      <div class="simonHeader">header</div>
+      <div class="simonContainer"></div>
+      <div class="game-over">
+            <div id="game-over-text">Game Over</div>
+            <div id="btnRestart">Restart</div>
+      </div>
   </div>
-  <footer>
-
-  </footer>
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
+    <!-- JavaScript at the bottom for fast page loading -->
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -60,12 +53,12 @@
 
   <!-- scripts concatenated and minified via build script -->
   <script src="js/utils.js"></script>
-  <script src="js/SimonController.js"></script>
-  <script src="js/SimonView.js"></script>
+  <script src="js/SimonController.js?v=1"></script>
+  <script src="js/SimonView.js?v=2"></script>
   <script src="js/plugins.js"></script>
   <script>
       $(document).ready(function () {
-            SimonView.init();
+          SimonView.init();
       });
   </script>
   <!-- end scripts -->

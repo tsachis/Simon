@@ -8,8 +8,8 @@ var SimonController = function (args) {
         gameButtons: [],
         round: 1,
         settings: {
-            gameSize: 6,
-            humanPlayMaxTime: 1000 * 50
+            gameSize: args.gameSize == null ? 6 : args.gameSize,
+            humanPlayMaxTime: args.humanPlayMaxTime == null ? 1000 * 50 : args.humanPlayMaxTime
         }
     };
     var attachEvent = function (name, handler) {
@@ -44,7 +44,7 @@ var SimonController = function (args) {
         $(simonRecord).each(function (i) {
             console.log("Simon pushed " + this);
             events.onSimonButtonPlay(this);
-            
+
         });
         endSimonPlay();
     };
@@ -103,7 +103,8 @@ var SimonController = function (args) {
             else {
                 events.onHumanMoveIsGood();
             }
-        }
+        },
+        getRound: function () { return round; }
     }
 };
 
