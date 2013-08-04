@@ -73,6 +73,7 @@ var SimonController = function (args) {
             console.log(gameData.gameButtons.join(" "));
             humanRecord = [];
             simonRecord = [];
+            round = 1;
             simonPlaying = false;
         },
         startSimonPlay: function () {
@@ -104,7 +105,7 @@ var SimonController = function (args) {
                 events.onHumanMoveIsGood();
             }
         },
-        getRound: function () { return round; }
+        getRound: function () { return gameData.round; }
     }
 };
 

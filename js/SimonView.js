@@ -35,36 +35,46 @@ var SimonView = function () {
         buttonPlay($(this).data("id"));
         simon.humanPlay($(this).data("id"));
     };
-    var roundOver = function () { 
-        $(".simonHeader").text("Round " + simon.getRound())
+    var roundOver = function () {
+        $("#txtRound").text(simon.getRound() + 1)
     };
     var gameOver = function () {
         $(".main>div").hide();
         $(".game-over").show();
     };
-    var simon = new SimonController({
-        onSimonPlayEnd: simonPlayEnd,
-        onGameOver: gameOver,
-        onHumanFinishedRound: roundOver
-    });
+    var simon = null;
     var startGame = function () {
         $(".simonContainer").html("");
         $(".main>div").hide();
-        $(".simonContainer,.simonHeader").show();
         gameZoneHeight = $(window).height() * 0.5;
+        var btnSize = gameZoneHeight * 0.4;
         $(".simonContainer").height(gameZoneHeight).width(gameZoneHeight);
-        //$(".simonContainer").css("left", ($(window).width() / 2) - (gameZoneHeight / 2));
+        $(".simonContainer").css("left", Math.max(($(".main").width() / 2) - (gameZoneHeight / 2) - btnSize, 10));
         $(".simonContainer").css("top", (gameZoneHeight * 0.1));
         for (var i = 1; i <= gameSize; i++) {
             var btn = $("<div></div>");
-            btn.addClass("btn" + i)
+            btn.addClass("btn" + i).addClass("btn")
                     .attr("data-id", i)
-                    .width(gameZoneHeight * 0.4)
-                    .height(gameZoneHeight * 0.4)
+                    .width(btnSize)
+                    .height(btnSize)
                     .click(humanClicked)
                     .appendTo($(".simonContainer"));
             addTransformToButton(btn, i, gameSize, gameZoneHeight);
         }
+        var btn = $("<div></div>");
+        btn.addClass("round")
+                    .width(btnSize)
+                    .height(btnSize)
+                    .css("left", (gameZoneHeight / 2))
+                    .css("top", (gameZoneHeight / 2))
+                    .append($("<div id='txtRound'>1</div>").width(btnSize).height(btnSize))
+                    .appendTo($(".simonContainer"));
+        $(".simonContainer").show();
+        simon = new SimonController({
+            onSimonPlayEnd: simonPlayEnd,
+            onGameOver: gameOver,
+            onHumanFinishedRound: roundOver
+        });
         simon.init();
         simon.startSimonPlay();
     };

@@ -1,43 +1,48 @@
 
-.simonHeader {
-    width:  400px;
-    border:  1px solid rgba(210, 208, 175,1);
-    margin: 5px;
-    text-align: center;
-    padding:  5px;
-    font-size: 1.5em;
-    color: white;
-    text-shadow: 1px #333; 
-}
 .simonContainer {
     position: relative;
 }
 
-.simonContainer div {
+.simonContainer div.btn {
     position: absolute;
-    border:  1px solid #c4bfbf;
+    border:  2px solid #888;
     border-radius: 50%;
     top: 50%; 
     left: 50%;
-    box-shadow: 4px 2px #808080;
     -webkit-transition:width 100ms ease-in-out, height 100ms ease-in-out;
+    -webkit-box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
 }
 
 
 
-div.btn1 {  background-color: rgba(59, 36, 44,1); }
-div.btn2 {  background-color: rgba(192, 35, 61,1); }
-div.btn3 {  background-color: rgba(210, 208, 175,1); }
-div.btn4 {  background-color: rgba(254, 238, 215,1); }
-div.btn5 {  background-color: rgba(228, 194, 173,1); }
-div.btn6 {  background-color: rgba(140, 47, 182,1); }
-
+div.btn1 {  background-color: #f90606; }
+div.btn2 {  background-color: #172ddb; }
+div.btn3 {  background-color: #e3df16; }
+div.btn4 {  background-color: #2dca0e; }
+div.btn5 {  background-color: #d913b7; }
+div.btn6 {  background-color: #f5c665; }
+div.btn7 {  background-color: #c0bbbb; }
+div.btn8 {  background-color: #550ad0; }
 
 .simonContainer div.pushed {
-    border:  1px solid #d1d236;
-    box-shadow: 2px 1px #808080;
     -webkit-transition:width 100ms ease-in-out, height 100ms ease-in-out;
+    -webkit-box-shadow: inset -25px -25px 40px rgba(0,0,0,.3);
 }
+
+.simonContainer div.round {
+    font-size: 5em;
+    color:  white;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+}
+
+.simonContainer #txtRound {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 html {
     height:100%;
 }
