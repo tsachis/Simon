@@ -49,6 +49,7 @@ html {
 body {
     height: auto !important; 
     background: linear-gradient(to bottom, #cedce7 0%,#596a72 100%);   
+    background:-webkit-linear-gradient(top, #cedce7,    #596a72);
 }
 .main {
     position: relative;
@@ -78,6 +79,7 @@ body {
     border: 1px solid #c4bfbf;
     border-radius: 20px;
     background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+    background:-webkit-linear-gradient(bottom, #1e5799, #7db9e8);
     font-size: 4em;
     color: white;
     text-shadow: 2px 2px #000; 
