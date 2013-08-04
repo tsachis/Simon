@@ -38,14 +38,14 @@
       <div class="start">
         <div id="btnStart">Start</div>
       </div>
-      <div class="simonContainer"></div>
-      <div class="game-over">
+      <div class="simonContainer" style="display: none"></div>
+      <div class="game-over"  style="display: none">
             <div id="game-over-text">Game Over</div>
             <div id="btnRestart">Restart</div>
       </div>
   </div>
     <!-- JavaScript at the bottom for fast page loading -->
-
+    
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
@@ -55,6 +55,16 @@
   <script src="js/SimonController.js?v=2"></script>
   <script src="js/SimonView.js?v=3"></script>
   <script src="js/plugins.js"></script>
+  <audio id="audioBtn1"><source src="sounds/btn1.wav" type="audio/wav"></audio>
+  <audio id="audioBtn2"><source src="sounds/btn2.wav" type="audio/wav"></audio>
+  <audio id="audioBtn3"><source src="sounds/btn3.wav" type="audio/wav"></audio>
+  <audio id="audioBtn4"><source src="sounds/btn4.wav" type="audio/wav"></audio>
+  <audio id="audioBtn5"><source src="sounds/btn5.wav" type="audio/wav"></audio>
+  <audio id="audioBtn6"><source src="sounds/btn6.wav" type="audio/wav"></audio>
+  <audio id="audioBtn7"><source src="sounds/btn1.wav" type="audio/wav"></audio>
+  <audio id="audioBtn8"><source src="sounds/btn3.wav" type="audio/wav"></audio>
+  <audio id="audio-game-over"><source src="sounds/game-over.wav" type="audio/wav"></audio>
+  <audio id="audio-start"><source src="sounds/start.wav" type="audio/wav"></audio>
   <script>
       $(document).ready(function () {
           SimonView.init();

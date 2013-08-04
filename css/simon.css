@@ -47,7 +47,6 @@ html {
     height:100%;
 }
 body {
-    min-height: 100%; 
     height: auto !important; 
     background: linear-gradient(to bottom, #cedce7 0%,#596a72 100%);   
 }
@@ -55,27 +54,38 @@ body {
     position: relative;
 }
 
-.start,.game-over {
-    position: absolute;
-    top: 100px;
-    left:  30%;
+.start {
+    position: relative;
+    margin-left: auto;
+    margin-right:  auto;
+    text-shadow: 5px 5px #000; 
+}
+.game-over {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 5px 5px #000; 
 }
 #game-over-text {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     font-size: 5em;
     letter-spacing: .2em;
     color:  white;
 }
 #btnStart, #btnRestart {
-    margin: 0 30%;
+    margin-left: auto;
+    margin-right:  auto;
+    margin-top: 4em;
     text-align: center;
-    width:  200px;
+    width:  4em;
     border: 1px solid #c4bfbf;
     border-radius: 20px;
     background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
     font-size: 4em;
     color: white;
-    text-shadow: 1px #333; 
-    padding: 10px 20px;
+    text-shadow: 2px 2px #000; 
     cursor: pointer;
 }
 

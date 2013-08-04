@@ -38,6 +38,7 @@ var SimonController = function (args) {
         return (simonRecord.join(" ") === humanRecord.join(" "));
     };
     var simonPlay = function () {
+        simonPlaying = true;
         var btnIndex = utils.getRandomInt(0, gameData.gameButtons.length - 1);
         simonRecord.push(btnIndex);
 
@@ -74,10 +75,9 @@ var SimonController = function (args) {
             humanRecord = [];
             simonRecord = [];
             round = 1;
-            simonPlaying = false;
+            simonPlaying = true;
         },
         startSimonPlay: function () {
-            simonPlaying = true;
             humanRecord = [];
             simonRecord = [];
             simonPlay();
@@ -105,7 +105,9 @@ var SimonController = function (args) {
                 events.onHumanMoveIsGood();
             }
         },
-        getRound: function () { return gameData.round; }
+        getRound: function () { 
+            return gameData.round; 
+        }
     }
 };
 

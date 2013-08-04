@@ -1,5 +1,6 @@
 var SimonView = function () {
     var btnPushHandle = null;
+    var isSimonPlaying = true;
     var simonPlayDelay = 1000;
     var gameZoneHeight = null;
     var gameSize = 6;
@@ -16,10 +17,10 @@ var SimonView = function () {
                                 .width(size).height(size);
     };
     var buttonPlay = function (index) {
-        console.log("pushed " + index);
         if (btnPushHandle != null)
             clearTimeout(btnPushHandle);
         clearPushedButtons();
+        $("#audioBtn" + index)[0].play();
         animateButtonClick($("div.btn" + index));
 
         btnPushHandle = setTimeout(clearPushedButtons, 200);
@@ -30,17 +31,25 @@ var SimonView = function () {
                 buttonPlay(simonRecord[i]);
             }, (i + 1) * simonPlayDelay);
         });
+        setTimeout(function () {
+            isSimonPlaying = false;
+        }, (simonRecord.length) * simonPlayDelay);
     };
     var humanClicked = function () {
+        if (isSimonPlaying) return;
         buttonPlay($(this).data("id"));
         simon.humanPlay($(this).data("id"));
     };
     var roundOver = function () {
-        $("#txtRound").text(simon.getRound() + 1)
+        $("#txtRound").text(simon.getRound() + 1);
+        isSimonPlaying = true;
     };
     var gameOver = function () {
-        $(".main>div").hide();
-        $(".game-over").show();
+        setTimeout(function () {
+            $("#audio-game-over")[0].play();
+            $(".main>div").hide();
+            $(".game-over").show();
+        }, 1000);
     };
     var simon = null;
     var startGame = function () {
@@ -69,6 +78,7 @@ var SimonView = function () {
                     .css("top", (gameZoneHeight / 2))
                     .append($("<div id='txtRound'>1</div>").width(btnSize).height(btnSize))
                     .appendTo($(".simonContainer"));
+        $("#audio-start")[0].play();
         $(".simonContainer").show();
         simon = new SimonController({
             onSimonPlayEnd: simonPlayEnd,
